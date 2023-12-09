@@ -1,0 +1,221 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>头歌C语言第一章 | 小k的笔记</title>
+<link rel="shortcut icon" href="https://kk95283.github.io/favicon.ico?v=1702107040508">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kk95283.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="头歌C语言第一章 | 小k的笔记 - Atom Feed" href="https://kk95283.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="第1关：看看你的成绩怎么样
+任务描述
+假设某同学选修了5门课程，请依次从键盘输入他5门课的成绩（每两个成绩之间以逗号隔开），然后求出他们的平均成绩并输出。（保留两位小数）
+#include &lt;stdio.h&gt;
+int main(..." />
+    <meta name="keywords" content="C语言" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kk95283.github.io">
+  <img class="avatar" src="https://kk95283.github.io/images/avatar.png?v=1702107040508" alt="">
+  </a>
+  <h1 class="site-title">
+    小k的笔记
+  </h1>
+  <p class="site-description">
+    必须让你飞起来
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              头歌C语言第一章
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-12-05
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://kk95283.github.io/tag/F8M30g5ow/" class="post-tag">
+                  # C语言
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>第1关：看看你的成绩怎么样<br>
+任务描述<br>
+假设某同学选修了5门课程，请依次从键盘输入他5门课的成绩（每两个成绩之间以逗号隔开），然后求出他们的平均成绩并输出。（保留两位小数）<br>
+#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+/<em><strong><strong><strong><strong><strong><strong><strong><strong>Begin</strong></strong></strong></strong></strong></strong></strong></strong></em>*/<br>
+float a,b,c,d,e;<br>
+scanf(&quot;%f,%f,%f,%f,%f&quot;, &amp;a, &amp;b, &amp;c, &amp;d, &amp;e);<br>
+float sum;<br>
+sum = a+b+c+d+e;<br>
+printf(&quot;%.2f&quot;,sum/5);<br>
+/***************** End ******************/<br>
+return 0;<br>
+}<br>
+第2关：输出字符的ASCII码<br>
+任务描述<br>
+从键盘输入一个字符，按规定格式输出这个字符及它的ASCII码。例如：<br>
+输入<br>
+A<br>
+输出<br>
+“The ASCII of 'A' is 65”.</p>
+<p>#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+/<em><strong><strong><strong><strong><strong><strong><strong><strong>Begin</strong></strong></strong></strong></strong></strong></strong></strong></em>*/<br>
+char a;<br>
+scanf(&quot; %c&quot;, &amp;a); // 注意加入空格，以避免读取前面的空白字符<br>
+int c = (int)a; // 将输入字符的ASCII码赋值给c<br>
+printf(&quot;&quot;The ASCII of '%c' is %d&quot;.&quot;, a, c); // 输出字符及其ASCII码<br>
+return 0;<br>
+/***************** End <em><strong><strong><strong><strong><strong><strong><strong><strong><em>/<br>
+return 0;<br>
+}<br>
+第3关：进制转换<br>
+任务描述<br>
+输入一个非负整数，输出它的八进制，十进制以及十六进制数<br>
+#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+/<em><strong><strong><strong><strong><strong><strong><strong><strong>Begin</strong></strong></strong></strong></strong></strong></strong></strong></em></em>/<br>
+int i;<br>
+scanf(&quot;%d&quot;,&amp;i);<br>
+printf(&quot;%o &quot;,i);<br>
+printf(&quot;%d &quot;,i);<br>
+printf(&quot;%x&quot;,i);<br>
+/</strong></strong></strong></strong></strong></strong></strong></strong></em> End ******************/<br>
+return 0;<br>
+}</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kk95283.github.io/post/emu8086-jia-fa-ji-suan/">
+              <h3 class="post-title">
+                emu8086加法计算
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://kk95283.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

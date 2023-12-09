@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kk95283.github.io</id>
+    <title>小k的笔记</title>
+    <updated>2023-12-09T07:34:23.166Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://kk95283.github.io"/>
+    <link rel="self" href="https://kk95283.github.io/atom.xml"/>
+    <subtitle>必须让你飞起来</subtitle>
+    <logo>https://kk95283.github.io/images/avatar.png</logo>
+    <icon>https://kk95283.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, 小k的笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[blender权重传递]]></title>
+        <id>https://kk95283.github.io/post/blender-quan-chong-chuan-di/</id>
+        <link href="https://kk95283.github.io/post/blender-quan-chong-chuan-di/">
+        </link>
+        <updated>2023-12-09T07:29:42.000Z</updated>
+        <content type="html"><![CDATA[<p>blender绑好裸体模特后 可用权重传递的方式来将权重付给衣服 来避免衣服有权重而身体没有权重的问题<br>
+https://blog.csdn.net/ttm2d/article/details/106060893</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[blender auto_rig pro]]></title>
+        <id>https://kk95283.github.io/post/blender-auto_rig-pro/</id>
+        <link href="https://kk95283.github.io/post/blender-auto_rig-pro/">
+        </link>
+        <updated>2023-12-07T10:38:14.000Z</updated>
+        <content type="html"><![CDATA[<p>1.刷权重的基本知识<br>
+2.骨骼绑定基本知识<br>
+3.形态键</p>
+<p>模型朝向-Y方向<br>
+模型一定按照Z轴对称<br>
+模型最低点一定落在X轴上<br>
+模型尺寸大小应适宜 大约一个立方体大小<br>
+尽量采用低面数模型<br>
+Ctrl+A全部变换（maya冻结变化）</p>
+<p>1.定点<br>
+选中所有模型<br>
+Auto-Rig Pro:Smart<br>
+Get selected objects<br>
+Full_Body 确定<br>
+Skeleton Settings Presets:UE5<br>
+Twist Count 3-4(如果少了在UE中手腕扳不过来)<br>
+neck<br>
+chin<br>
+shoulder<br>
+wrists<br>
+spine root<br>
+ankle<br>
+GO!<br>
+2.生成控制器<br>
+Auto-Rig Pro<br>
+Rig<br>
+Match to Rig<br>
+3.蒙皮<br>
+Bind<br>
+4.删除骨架<br>
+Auto_rig Pro<br>
+Rig<br>
+Add Amature 点×即可删除骨架</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[头歌C语言第四章]]></title>
+        <id>https://kk95283.github.io/post/tou-ge-c-yu-yan-di-si-zhang/</id>
+        <link href="https://kk95283.github.io/post/tou-ge-c-yu-yan-di-si-zhang/">
+        </link>
+        <updated>2023-12-05T10:45:14.000Z</updated>
+        <content type="html"><![CDATA[<p>字符数组<br>
+第1关：字符逆序<br>
+任务描述<br>
+题目描述:输入一个字符串，输出反序后的字符串。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char a[200];<br>
+int i=0,j=0,t=0,k;<br>
+scanf(&quot;%s&quot;,a);<br>
+while(a[i]!='\0'){<br>
+i++;<br>
+j++;<br>
+}<br>
+for(i=0,k=j-1;i&lt;k;i++,k--){<br>
+t=a[i];<br>
+a[i]=a[k];<br>
+a[k]=t;<br>
+}<br>
+for(i=0;i&lt;=j;i++)<br>
+printf(&quot;%c&quot;,a[i]);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第2关：字符统计<br>
+任务描述<br>
+题目描述:对于给定的一个字符串，统计其中数字字符出现的次数。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n,i,j,count;<br>
+char s[10][50];   	<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+scanf(&quot;%s&quot;,&amp;s[i]);<br>
+}<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+count=0;<br>
+for(j=0;s[i][j]!='\0';j++)<br>
+if(s[i][j]&gt;='0'&amp;&amp;s[i][j]&lt;='9')<br>
+count++;<br>
+printf(&quot;%d\n&quot;,count);<br>
+}</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第3关：字符插入<br>
+任务描述<br>
+题目描述:输入两个字符串a和b，将b串中的最大字符插入到a串中最小字符后面。<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char a[50],b[50];<br>
+int i,j,m,n;<br>
+int max,min;<br>
+gets(a);<br>
+gets(b);<br>
+m=strlen(a);<br>
+n=strlen(b);<br>
+for(i=0,min=0;i&lt;m;i++)<br>
+if(a[min]&gt;a[i])<br>
+min=i;<br>
+for(i=0,max=0;i&lt;n;i++)<br>
+if(b[max]&lt;b[i])<br>
+max=i;<br>
+for(j=m+1;j&gt;min;j--)<br>
+a[j]=a[j-1];<br>
+a[j+1]=b[max];<br>
+puts(a);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第4关：字符串处理<br>
+任务描述<br>
+题目描述：编写程序，输入字符串s1和s2以及插入位置f，在字符串s1中的指定位置f处插入字符串s2。如输入&quot;BEIJING&quot;， &quot;123&quot;， 3，则输出:&quot;BEI123JING&quot;。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char s1[150],s2[150],s3[150];<br>
+int f,m,n,i,j=0,k=0;<br>
+gets(s1);<br>
+gets(s2);<br>
+scanf(&quot;%d&quot;,&amp;f);<br>
+m=strlen(s1);<br>
+n=strlen(s2);<br>
+for(i=f;i&lt;m;i++)<br>
+{<br>
+s3[k++]=s1[i];<br>
+}<br>
+for(i=f;i&lt;n+f+1;i++)<br>
+{<br>
+s1[i]=s2[j++];<br>
+}<br>
+strcat(s1,s3);<br>
+s1[m+n]='\0';<br>
+printf(&quot;%s&quot;,s1);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第5关：字符串统计<br>
+题目描述:输入一段字符(由空格、字母和数字几种组成，保证开头不为空格)，里面有若干个字符串，求这些字符串的长度和，并输出最长字符串内容,如果有多个输出最先出现的那个字符串。以stop作为最后输入的字符串。<br>
+#include&lt;stdio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i,j=0,m,count,max;<br>
+char a[100];<br>
+while(1)<br>
+{<br>
+gets(a);<br>
+count=0;<br>
+max=0;<br>
+if(strcmp(a,&quot;stop&quot;)<mark>0)<br>
+break;<br>
+for(i=strlen(a)-1;i&gt;=0;i--)<br>
+{<br>
+if(a[i]!=' '&amp;&amp;i!=0)<br>
+{<br>
+j++;<br>
+count++;<br>
+}<br>
+else if(a[i]</mark>' '||i<mark>0)<br>
+{<br>
+if(i</mark>0)<br>
+{<br>
+j++;<br>
+count++;<br>
+}<br>
+if(j&gt;=max)<br>
+{<br>
+max=j;<br>
+m=i;<br>
+if(i==0)<br>
+m=i-1;<br>
+}<br>
+j=0;<br>
+}<br>
+}<br>
+printf(&quot;%d &quot;,count);<br>
+for(i=m+1;i&lt;m+1+max;i++)<br>
+printf(&quot;%c&quot;,a[i]);<br>
+printf(&quot;\n&quot;);<br>
+}</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第6关：字符串排序<br>
+任务描述<br>
+题目描述：输入3行，每行n个字符串，按由小到大的顺序输出<br>
+#include&lt;stdio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char ch1[1000],ch2[1000],ch3[1000],ch4[1000];<br>
+gets(ch1);gets(ch2);gets(ch3);<br>
+//strcmp(s1,s2) s1&gt;s2则返回正数 反之则返回负数<br>
+if(strcmp(ch1,ch2)&gt;0)<br>
+{<br>
+strcpy(ch4,ch2);<br>
+strcpy(ch2,ch1);<br>
+strcpy(ch1,ch4);<br>
+}<br>
+if(strcmp(ch1,ch3)&gt;0)<br>
+{<br>
+strcpy(ch4,ch3);<br>
+strcpy(ch3,ch1);<br>
+strcpy(ch1,ch4);<br>
+}<br>
+if(strcmp(ch2,ch3)&gt;0)<br>
+{<br>
+strcpy(ch4,ch3);<br>
+strcpy(ch3,ch2);<br>
+strcpy(ch2,ch4);<br>
+}<br>
+puts(ch1);<br>
+puts(ch2);<br>
+puts(ch3);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>一维数组和二维数组<br>
+第1关：排序问题(冒泡排序法)<br>
+任务描述<br>
+本关任务:将十个数进行从大到小的顺序进行排列。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a[10];<br>
+int i,j,t;<br>
+for(i=0; i&lt;10; i++)<br>
+scanf(&quot;%d&quot;,&amp;a[i]);<br>
+for(j=0; j&lt;9; j++)<br>
+for(i=0; i&lt;9-j; i++)<br>
+if(a[i]&lt;a[i+1])<br>
+{<br>
+t=a[i];<br>
+a[i]=a[i+1];<br>
+a[i+1]=t;<br>
+}<br>
+for(i=0; i&lt;10; i++)<br>
+printf(&quot;%d &quot;,a[i]);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第2关：查找整数</p>
+<p>任务描述<br>
+题目描述：给出一个包含n个整数的数列，问整数a在数列中的第一次出现是第几个。<br>
+输入<br>
+第一行包含一个整数n。<br>
+第二行包含n个非负整数，为给定的数列，数列中的每个数都不大于10000。<br>
+第三行包含一个整数a，为待查找的数。<br>
+输出<br>
+如果a在数列中出现了，输出它第一次出现的位置(位置从1开始编号)，否则输出-1。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+int a[n];<br>
+int num;<br>
+int i;<br>
+int flag=0;<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+scanf(&quot;%d&quot;,&amp;a[i]);<br>
+}<br>
+scanf(&quot;%d&quot;,&amp;num);<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+if(a[i]<mark>num)<br>
+{<br>
+flag=1;<br>
+printf(&quot;%d&quot;,i+1);<br>
+break;<br>
+}<br>
+}<br>
+if(flag</mark>0)<br>
+printf(&quot;-1&quot;);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第3关：计算数组中元素的最大值及其所在的行列下标值<br>
+任务描述<br>
+题目描述:按如下函数原型编程从键盘输入一个m行n列的二维数组，然后计算数组中元素的最大值及其所在的行列下标值。其中m和n的值由用户键盘输入。已知m和n的值都不超过10。<br>
+输入<br>
+输入数组大小：&quot;%d,%d&quot;<br>
+下面输入数组中元素。</p>
+<p>输出<br>
+输出格式：<br>
+数组大小输入提示信息：&quot;Input m, n:&quot;<br>
+数组元素输入提示信息：&quot;Input %d*%d array: &quot;<br>
+输出格式：&quot;max=%d, row=%d, col=%d&quot;</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int m,n;<br>
+printf(&quot;Input m, n:&quot;);<br>
+scanf(&quot;%d,%d&quot;,&amp;m,&amp;n);<br>
+int a[m][n];<br>
+printf(&quot;Input %d*%d array:\n&quot;,m,n);<br>
+int i,j;<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+for(j=0;j&lt;m;j++)<br>
+scanf(&quot;%d&quot;,&amp;a[i][j]);<br>
+}<br>
+int max,row,col;<br>
+max=a[0][0];<br>
+row=1;<br>
+col=1;<br>
+for (i=0;i&lt;m;i++)<br>
+for (j=0;j&lt;n;j++)<br>
+if (max&lt; a[i][j])<br>
+{<br>
+max=a[i][j];<br>
+row=i+1;<br>
+col=j+1;<br>
+}<br>
+printf(&quot;max=%d, row=%d, col=%d&quot;,max,row,col);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>任务描述<br>
+题目描述:将n个从小到大排序的整数（n&lt;1000000）从1~n进行编号，并一个待查找的整数m，请使用二分法进行查找。<br>
+输入<br>
+输入包括3行，第一行为整数n，第二行包括n个整数，以空格分隔，第三行为整数m。<br>
+输出<br>
+如果能够在序列中找到整数m，则输出编号（如果存在多个编号，返回编号最小的），如果不存在，则输出None。</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n,m,s,b,mid,i;<br>
+scanf(&quot;%d&quot;,&amp;n);		<br>
+int a[n];<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+scanf(&quot;%d&quot;,&amp;a[i]);		<br>
+}<br>
+scanf(&quot;%d&quot;,&amp;m);<br>
+s=0;<br>
+b=n-1;			<br>
+while(s&lt;=b)		<br>
+{<br>
+mid=(b+s)/2;		<br>
+if(m&gt;a[mid])		<br>
+{<br>
+s=mid+1;<br>
+}<br>
+else if(m&lt;a[mid])<br>
+{<br>
+b=mid-1;<br>
+}<br>
+else if(m==a[mid])<br>
+{<br>
+printf(&quot;%d&quot;,mid+1);return 0;<br>
+}</p>
+<pre><code>} 
+printf(&quot;None&quot;);
+
+/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第5关：鞍点<br>
+任务描述<br>
+题目描述:找出具有m行n列二维数组Array的“鞍点”，即该位置上的元素在该行上最大，在该列上最小，其中1&lt;=m,n&lt;=10。<br>
+输入<br>
+输入数据有多行，第一行有两个数m和n，下面有m行，每行有n个数。</p>
+<p>输出<br>
+按下列格式输出鞍点：<br>
+Array[i][j]=x<br>
+其中x代表鞍点，i和j为鞍点所在的数组行和列下标，我们规定数组下标从0开始。<br>
+一个二维数组并不一定存在鞍点，此时请输出None<br>
+我们保证不会出现两个鞍点的情况，比如：<br>
+3 3<br>
+1 2 3<br>
+1 2 3<br>
+3 6 8</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int m, n, i, j, k, b, c, flag, q;<br>
+q = 1;<br>
+scanf(&quot;%d %d&quot;, &amp;m, &amp;n);<br>
+int a[m][n];<br>
+for(i = 0; i &lt; m; i++)<br>
+{<br>
+for(j = 0; j &lt; n; j++)<br>
+{<br>
+scanf(&quot;%d&quot;, &amp;a[i][j]);<br>
+}<br>
+}<br>
+for(i = 0; i &lt; m; i++)<br>
+{<br>
+flag = 1;<br>
+b = i, c = 0;<br>
+for(j = 0; j &lt; n; j++)<br>
+{<br>
+if(a[b][c] &lt; a[i][j])<br>
+{<br>
+c = j;<br>
+}<br>
+}///寻找每行的最大值<br>
+for(k = 0; k &lt; m; k++)<br>
+{<br>
+if(a[b][c] &gt; a[k][c])<br>
+{<br>
+flag = 0;<br>
+break;<br>
+}<br>
+}///排除法判断是否是每列的最小值<br>
+if(flag)<br>
+{<br>
+printf(&quot;Array[%d][%d]=%d\n&quot;, b, c, a[b][c]);<br>
+q = 0;<br>
+}<br>
+}<br>
+if(q)<br>
+printf(&quot;None\n&quot;);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第6关：删除最大值<br>
+任务描述<br>
+题目描述:输入10个互不相同的整数并保存在数组中，找到该最大元素并删除它，输出删除后的数组<br>
+输入<br>
+输入10个互不相同整数<br>
+输出<br>
+输出删除最大元素后的数组<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a[10];<br>
+int i,j,max;<br>
+max=0;<br>
+for(i=0;i&lt;10;i++)<br>
+{<br>
+scanf(&quot;%d&quot;,&amp;a[i]);<br>
+}<br>
+for(i=0;i&lt;10;i++)<br>
+{<br>
+if(max&lt;a[i])<br>
+{<br>
+max=a[i];<br>
+j=i;<br>
+}<br>
+}<br>
+for (i=j;j&lt;9;j++)<br>
+{<br>
+a[j]=a[j+1];<br>
+}<br>
+for (i=0;i&lt;9;i++)<br>
+printf (&quot;%d &quot;,a[i]);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第7关：杨辉三角<br>
+题目描述：还记得中学时候学过的杨辉三角吗？具体的定义这里不再描述，你可以参考以下的图形：<br>
+1<br>
+1 1<br>
+1 2 1<br>
+1 3 3 1<br>
+1 4 6 4 1<br>
+1 5 10 10 5 1</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a[10][10];<br>
+int i,j;<br>
+for(i=0;i&lt;10;i++){<br>
+a[i][i]=1;<br>
+a[i][0]=1;<br>
+}<br>
+for(i=2;i&lt;10;i++)<br>
+for(j=1;j&lt;=i-1;j++)<br>
+a[i][j]=a[i-1][j]+a[i-1][j-1];<br>
+for(i=0;i&lt;10;i++)<br>
+{<br>
+for(j=0;j&lt;=i;j++)<br>
+{<br>
+printf(&quot;%d&quot;,a[i][j]);<br>
+if(j!=i)<br>
+printf(&quot; &quot;);<br>
+}<br>
+printf(&quot;\n&quot;);<br>
+}</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[头歌C语言第三章]]></title>
+        <id>https://kk95283.github.io/post/tou-ge-c-yu-yan-di-san-zhang/</id>
+        <link href="https://kk95283.github.io/post/tou-ge-c-yu-yan-di-san-zhang/">
+        </link>
+        <updated>2023-12-05T05:36:58.000Z</updated>
+        <content type="html"><![CDATA[<p>函数<br>
+第1关：求和<br>
+任务描述<br>
+题目描述:给你一个n，要求你编写一个函数求1+2+.......+n.<br>
+#include&lt;stdio.h&gt;<br>
+//编写函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int sum(int x)<br>
+{<br>
+int i=1,sum=0;<br>
+for(i=1;i&lt;=x;i++)<br>
+{<br>
+sum+=i;<br>
+}<br>
+return sum;<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n,c;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+printf(&quot;%d&quot;,sum(n));<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第2关：回文数计算<br>
+任务描述<br>
+本关任务：编写函数求区间[200,3000]中所有的回文数，回文数是正读和反读都是一样的数。如525, 1551<br>
+#include&lt;stdio.h&gt;<br>
+void solve(){<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i=0,a,b,c,d;<br>
+for(i=200; i&lt;=3000; i++) {<br>
+a=i/1000;	<br>
+b=(i-a<em>1000)/100;	<br>
+c=((i-a</em>1000)-b<em>100)/10;	<br>
+d=i%10;	<br>
+if(i&lt;1000 &amp;&amp; b<mark>d)<br>
+printf(&quot;%d\n&quot;,i);<br>
+if( i&gt;=1000 &amp;&amp; a</mark>d &amp;&amp; b==c)<br>
+printf(&quot;%d\n&quot;,i);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+}<br>
+int main(void)<br>
+{<br>
+solve();<br>
+return 0;<br>
+}</p>
+<p>第3关： 编写函数求表达式的值<br>
+题目描述:有如下表达式 s = 1 + 1 / 3 + (1 * 2) / (3 * 5) + (1 * 2 * 3) / (3 * 5 * 7) + .... + (1 * 2 * 3 * .... * n) / (3 * 5 * 7 * ... * (2 * n + 1))。<br>
+#include&lt;stdio.h&gt;<br>
+//编写题目要求的函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int function(int n) {<br>
+double a=1,b=1,i;<br>
+double s=0;<br>
+for(i=0; i&lt;=n; i++) {<br>
+if(i<mark>0 || i</mark>1) a=1;<br>
+else a=a<em>i;<br>
+b=b</em>(2<em>i+1);<br>
+s+=(double)a/b;<br>
+}<br>
+printf(&quot;%.10lf\n&quot;,s);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+function(n);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第4关：阶乘数列<br>
+任务描述<br>
+题目描述:求Sn=1!+2!+3!+4!+5!+…+n!之值，其中n是一个数字。<br>
+#include&lt;stdio.h&gt;<br>
+//编写函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long long solve(long long n){<br>
+if(n&lt;=1)<br>
+return 1;<br>
+return(n<em>solve(n-1));<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long long n;<br>
+scanf(&quot;%lld&quot;,&amp;n);<br>
+long long ans=0;<br>
+for(long long i=1;i&lt;=n;i++)<br>
+ans+=solve(i);<br>
+printf(&quot;%lld&quot;, ans);<br>
+return 0;<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第5关：亲密数<br>
+任务描述<br>
+题目描述:两个不同的自然数A和B，如果整数A的全部因子(包括1，不包括A本身)之和等于B；且整数B的全部因子(包括1，不包括B本身)之和等于A，则将整数A和B称为亲密数。求3000以内的全部亲密数。<br>
+#include&lt;stdio.h&gt;<br>
+void solve(){<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long i,a,b1,b2;<br>
+for(a=1;a&lt;=3000;a++)<br>
+{<br>
+b1=0;<br>
+for(i=1;i&lt;a;i++)<br>
+{<br>
+if(a%i<mark>0)<br>
+b1+=i;<br>
+}<br>
+b2=0;<br>
+for(i=1;i&lt;b1;i++)<br>
+{<br>
+if(b1%i</mark>0)<br>
+b2+=i;<br>
+}<br>
+if(b2==a &amp;&amp;a&lt;b1)<br>
+printf(&quot;(%d,%d)&quot;,a,b1);<br>
+}<br>
+return ;<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+}<br>
+int main(void)<br>
+{<br>
+solve();<br>
+return 0;<br>
+}</p>
+<p>第6关：公约公倍数<br>
+任务描述<br>
+题目描述:写两个函数，分别求两个整数的最大公约数和最小公倍数，用主函数调用这两个函数，并输出结果。两个整数由键盘输入。</p>
+<p>#include&lt;stdio.h&gt;<br>
+//编写最大公约数GCD函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int GCD(long long int a,long long int b)<br>
+{<br>
+long long int c,d;<br>
+if(a&gt;0&amp;&amp;b&gt;0)<br>
+{<br>
+if(a&lt;b)<br>
+{<br>
+c=b;<br>
+b=a;<br>
+a=c;<br>
+}<br>
+while(b!=0)<br>
+{</p>
+<pre><code>		d=a%b;
+		a=b;
+		b=d;
+	}
+	return a;
+}
+</code></pre>
+<p>}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/</p>
+<p>//编写最小公倍数LCM函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/</p>
+<p>/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long long int a,b,gy,gb;<br>
+scanf(&quot;%lld%lld&quot;,&amp;a,&amp;b);<br>
+if(a&lt;0||b&lt;0)<br>
+{<br>
+printf(&quot;Input Error&quot;);<br>
+return 0;<br>
+}<br>
+gy=GCD(a,b);<br>
+gb=(a<em>b)/gy;<br>
+printf(&quot;%lld %lld&quot;,gy,gb);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+return 0;<br>
+}</p>
+<p>递归函数、嵌套函数<br>
+第1关：递归求阶乘数列<br>
+任务描述<br>
+题目描述：用递归求Sn=1!+2!+3!+4!+5!+…+n!之值，其中n是一个数字。<br>
+#include&lt;stdio.h&gt;<br>
+long long solve(long long n){<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+if(n&lt;1)<br>
+return 1;<br>
+return (n*solve(n-1));</p>
+<pre><code>/*********End**********/
+</code></pre>
+<p>}<br>
+int main(void)<br>
+{<br>
+long long n;<br>
+scanf(&quot;%lld&quot;,&amp;n);<br>
+long long ans=0;<br>
+for(long long i=1;i&lt;=n;i++)<br>
+ans+=solve(i);<br>
+printf(&quot;%lld&quot;, ans);<br>
+return 0;<br>
+}</p>
+<p>第2关：递归实现输出一个整数的逆序<br>
+任务描述<br>
+题目描述：编写一个递归函数，将一个整数n逆序输出，比如，n = 12345，输出54321。<br>
+#include&lt;stdio.h&gt;<br>
+void solve(int n){<br>
+printf(&quot;%d&quot;, n%10);<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+n=n/10;<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+if(n&gt;0) solve(n);<br>
+}<br>
+int main(void)<br>
+{<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+solve(n);<br>
+return 0;<br>
+}</p>
+<p>第3关：将整数递归转换成字符串<br>
+任务描述<br>
+题目描述：用递归法将一个整数n转换成字符串。例如，输入n为483，输出字符串 4 8 3，每个数字后面接一个空格用于隔开字符。<br>
+#include&lt;stdio.h&gt;<br>
+void solve(int n){<br>
+int temp=n%10;<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+if((n/=10)!=0)<br>
+solve(n);</p>
+<pre><code>/*********End**********/
+if(n)
+    printf(&quot; %d&quot;, temp);
+else
+    printf(&quot;%d&quot;, temp);
+</code></pre>
+<p>}<br>
+int main(void)<br>
+{<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+solve(n);<br>
+return 0;<br>
+}</p>
+<p>第4关：递归实现Ackman函数<br>
+题目描述：编写一函数实现下列Ackman函数，其中m，n为正整数</p>
+<pre><code>                    n+1                             if m=0,n&gt;0
+</code></pre>
+<p>Acm(m,n)=     Acm(m−1,1)                if n=0,m&gt;0<br>
+Acm(m−1,Acm(m,n−1))                  if n&gt;0,m&gt;0</p>
+<p>#include&lt;stdio.h&gt;<br>
+int Acm(int m,int n){<br>
+if(m<mark>0&amp;&amp;n&gt;0)<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+return(n+1);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+else if(n</mark>0&amp;&amp;m&gt;0)<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+return(Acm(m-1,1));<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+else<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+return(Acm(m-1,Acm(m,n-1)));<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+}<br>
+int main(void)<br>
+{<br>
+int m,n;<br>
+scanf(&quot;%d%d&quot;,&amp;m,&amp;n);<br>
+printf(&quot;%d&quot;, Acm(m,n));<br>
+return 0;<br>
+}</p>
+<p>​</p>
+<p>​</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[头歌C语言第二章]]></title>
+        <id>https://kk95283.github.io/post/tou-ge-c-yu-yan-di-er-zhang/</id>
+        <link href="https://kk95283.github.io/post/tou-ge-c-yu-yan-di-er-zhang/">
+        </link>
+        <updated>2023-12-05T04:25:27.000Z</updated>
+        <content type="html"><![CDATA[<p>第1关：输入两个正整数m和n，求其最大公约数和最小公倍数<br>
+求最小公倍数算法：<br>
+最小公倍数 = 两整数的乘积 ÷ 最大公约数<br>
+根据求最小公倍数的算法，可以看出如果已知最大公约数，就能很容易求出最小公倍数。而通过辗转相除法和相减法，可以求得最大公约数，下面分别进行介绍。<br>
+辗转相除法<br>
+已知有两整数m和n，利用辗转相除法求它们的最大公约数，具体步骤如下：<br>
+① m%n得余数t；<br>
+② 若t=0，则n即为两数的最大公约数；<br>
+③ 若t≠0，则m=n，n=t，再回去执行①。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int m, n, gcd, lcm;<br>
+scanf(&quot;%d%d&quot;, &amp;m, &amp;n);<br>
+lcm = m * n;<br>
+gcd = m % n;<br>
+while (gcd != 0)<br>
+{<br>
+m = n;<br>
+n = gcd;<br>
+gcd = m % n;<br>
+}<br>
+gcd = n;<br>
+lcm /= gcd;<br>
+printf(&quot;最大公约数是:%d\n&quot;,gcd);<br>
+printf(&quot;最小公倍数是:%d&quot;,lcm);</p>
+<pre><code>/*********End**********/ 
+return 0;
+</code></pre>
+<p>}</p>
+<p>第2关：用do-while循环按公式e=1+1/1!+1/2!+1/3!+…+1/n!计算 e 的值(精度为 1e-6)<br>
+任务描述<br>
+本关任务：编写程序用do-while循环按公式e=1+1/1!+1/2!+1/3!+…+1/n!计算 e 的值，要求直到最后一项的绝对值小于精度值eps时，计算终止。输出e的值并统计累加的项数。</p>
+<p>相关知识<br>
+先了解 do-while 语句的语法结构，再利用 do-while 语句编程解决问题。<br>
+do-while语句的一般形式为：</p>
+<p>do<br>
+语句<br>
+while (表达式);<br>
+注意：</p>
+<p>do-while语句的特点：先无条件地执行循环体，然后判断循环条件是否成立。<br>
+do-while循环与while循环的不同在于：do-while循环是先执行循环中的语句，然后再判断表达式是否为真，如果为真则继续循环；如果为假，则终止循环。<br>
+do-while循环至少要执行一次循环语句。<br>
+用do-while语句求1+2+1+2+3+…+100的和，主要部分程序如下：<br>
+int i,sum=0;<br>
+i=1;<br>
+do<br>
+{<br>
+sum=sum+i;<br>
+i++;<br>
+} while(i&lt;=100);<br>
+请注意区分循环类型：<br>
+计数控制的循环（用数字控制循环的次数），在已知循环次数的前提下进行的运算，可以通过输入的值来确定循环次数。<br>
+条件控制的循环(以特定条件来控制循环的次数)，循环次数受到条件的限制。<br>
+#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+/********** Begin <em><strong><strong><strong><strong><em>/<br>
+double n,a=1,b=1,e;<br>
+int i=1;<br>
+scanf(&quot;%lf&quot;,&amp;n);<br>
+do{<br>
+e+=b;<br>
+a=(a</em>i);<br>
+b=1/a;<br>
+i++;<br>
+}<br>
+while(b&gt;n);<br>
+printf(&quot;i=%d\n&quot;,i);<br>
+printf(&quot;e=%lf&quot;,e);<br>
+/</strong></strong></strong></strong></em>* End **********/<br>
+return 0;<br>
+}</p>
+<p>第3关：用for循环求sn=a+aa+aaa+aaaa+......的值<br>
+任务描述<br>
+本关任务：输入正整数a和n，计算s=a+aa+aaa+aaaa+aa...a（n个a）的值。<br>
+#include &lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/********** Begin <strong><strong><strong><strong><em>/<br>
+int a,n,s,p,i;<br>
+scanf(&quot;%d %d&quot;,&amp;a,&amp;n);<br>
+s=0;<br>
+p=0;<br>
+for(i=1;i&lt;=n;i++){<br>
+s=s</em>10+a;<br>
+p=p+s;<br>
+}<br>
+printf(&quot;%d&quot;,p);<br>
+/</strong></strong></strong></strong>** End **********/<br>
+return 0;<br>
+}</p>
+<p>选择结构程序设计进阶<br>
+第1关：快递费用计算<br>
+本关任务：编写一个计算机快递费的程序。</p>
+<p>上海市的某快递公司根据投送目的地距离公司的远近，将全国划分成5个区域：</p>
+<p>快递费按邮件重量计算，由起重费用、续重费用两部分构成：</p>
+<p>（1） 起重（首重）1公斤按起重资费计算（不足1公斤，按1公斤计算），超过首重的重量，按公斤（不足1公斤，按1公斤计算）收取续重费；<br>
+（2） 同城起重资费10元，续重3元/公斤；<br>
+（3） 寄往1区（江浙两省）的邮件，起重资费10元，续重4元；<br>
+（4） 寄往其他地区的邮件，起重资费统一为15元。而续重部分，不同区域价格不同：2区的续重5元/公斤，3区的续重6.5元/公斤，4区的续重10元/公斤。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a,t,n;<br>
+float price,z;<br>
+scanf(&quot;%d,%f&quot;,&amp;n,&amp;z);<br>
+t=z;<br>
+if(t<mark>z){a=1;}<br>
+if(n&lt;=4&amp;&amp;n&gt;=0){<br>
+switch(n){<br>
+case 0:<br>
+if(z&lt;=1)<br>
+price=10;<br>
+else{<br>
+if(a</mark>1)<br>
+price=(z-1)<em>3+10;<br>
+else<br>
+price=3</em>t+10;<br>
+};<br>
+break;<br>
+case 1:<br>
+if(z&lt;=1)<br>
+price=10;<br>
+else{<br>
+if(a<mark>1)<br>
+price=(z-1)<em>4+10;<br>
+else<br>
+price=4</em>t+10;<br>
+};<br>
+break;<br>
+case 2:<br>
+if(z&lt;=1)<br>
+price=15;<br>
+else{<br>
+if(a</mark>1)<br>
+price=(z-1)<em>5+15;<br>
+else<br>
+price=5</em>t+15;<br>
+};<br>
+break;<br>
+case 3:<br>
+if(z&lt;=1)<br>
+price=15;<br>
+else{<br>
+if(a<mark>1)<br>
+price=(z-1)<em>6.5+15;<br>
+else<br>
+price=6.5</em>t+15;<br>
+};<br>
+break;<br>
+case 4:<br>
+if(z&lt;=1)<br>
+price=15;<br>
+else{<br>
+if(a</mark>1)<br>
+price=(z-1)<em>10+15;<br>
+else<br>
+price=10</em>t+15;<br>
+};<br>
+break;<br>
+}<br>
+printf(&quot;Price:%6.2f&quot;,price);<br>
+}<br>
+else{<br>
+printf(&quot;Error in Area\n&quot;);<br>
+printf(&quot;Price: 0.00&quot;);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第2关：计算一元二次方程的根<br>
+本关任务：根据下面给出的求根公式，计算并输出一元二次方程ax2+bx+c=0的两个实根，要求精确到小数点后4位。其中a，b，c的值由用户从键盘输入。如果用户输入的系数不满足求实根的要求，输出错误提示 &quot;error!&quot;。<br>
+<img src="https://kk95283.github.io/post-images/1701750864082.png" alt="" loading="lazy"></p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+float a,b,c;<br>
+double x1,x2,d;<br>
+printf(&quot;Please enter the coefficients a,b,c:\n&quot;);<br>
+scanf(&quot;%f,%f,%f&quot;,&amp;a,&amp;b,&amp;c);<br>
+d=b<em>b-4</em>a<em>c;<br>
+if(b</em>b-4<em>a</em>c&lt;0){<br>
+printf(&quot;error!&quot;);<br>
+return 0;<br>
+}<br>
+else{<br>
+x1=(-b+sqrt(d))/(2<em>a);<br>
+x2=(-b-sqrt(d))/(2</em>a);<br>
+printf(&quot;x1=%.4f, x2=%.4f &quot;,x1,x2);</p>
+<pre><code>  }
+
+
+  
+  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第3关：产品信息格式化<br>
+任务描述<br>
+本关任务：编写一个程序, 对用户录入的产品信息进行格式化。<br>
+以下为程序的运行结果示例：</p>
+<p>Enter item number:</p>
+<p>385↙</p>
+<p>Enter unit price:</p>
+<p>12.5↙</p>
+<p>Enter purchase date (mm/dd/yy):</p>
+<p>12/03/2015↙</p>
+<p>Item      Unit     Purchase</p>
+<p>385      $ 12.50    12032015</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int BH;<br>
+float JG;<br>
+int mm,dd,yy;<br>
+printf(&quot;Enter item number:\n&quot;);<br>
+scanf(&quot;%d&quot;,&amp;BH);<br>
+printf(&quot;Enter unit price:\n&quot;);<br>
+scanf(&quot;%f&quot;,&amp;JG);<br>
+printf(&quot;Enter purchase date (mm/dd/yy):\n&quot;);<br>
+scanf(&quot;%d/%d/%d&quot;,&amp;mm,&amp;dd,&amp;yy);<br>
+printf(&quot;Item Unit Purchase\n&quot;);<br>
+printf (&quot;%-9d$ %-9.2f%02d%02d%02d\n&quot;,BH,JG,mm,dd,yy);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>循环结构程序设计1<br>
+第1关：小球自由落体运动<br>
+任务描述<br>
+一球从M米高度自由下落，每次落地后返回原高度的一半，再落下。 它在第N次落地时反弹多高？共经过多少米？ 结果保留两位小数。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i;<br>
+float M,N,sum=0;</p>
+<pre><code>scanf(&quot;%f %f&quot;,&amp;M,&amp;N);
+
+sum = M;	      //第一次下落高度  
+
+for(i=1;i&lt;=N;i++)
+{
+	M /= 2;
+	
+	if(i==N)      //不计算落地N次后反弹的值 
+	{
+		break;
+	}
+	
+	sum += 2 * M; //来回的路程之和 
+}
+
+printf(&quot;%.2f %.2f&quot;,M,sum);	
+
+  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第2关：求解出n以内所有能被5整除的正整数的乘积<br>
+任务描述<br>
+本关任务：求解出n以内(包含n)所有能被5整除的正整数数的乘积s。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n,i;<br>
+int s=1;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+for(i=1;i&lt;=n;i++){<br>
+if(i%5==0){<br>
+s*=i;<br>
+}<br>
+}<br>
+printf(&quot;%d\n&quot;,s);</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第3关：最大公约数和最小公倍数<br>
+任务描述<br>
+本关任务：输入两个正整数m和n，求其最大公约数和最小公倍数。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int m,n,temp,r,p;<br>
+scanf(&quot;%d %d&quot;,&amp;m,&amp;n);<br>
+if(m&lt;n){<br>
+temp=m;<br>
+m=n;<br>
+n=temp;<br>
+}<br>
+r=m%n;<br>
+p=m<em>n;<br>
+while(r!=0){<br>
+m=n;<br>
+n=r;<br>
+r=m%n;<br>
+}<br>
+printf(&quot;最大公约数是:%d\n&quot;,n);<br>
+printf(&quot;最小公倍数是:%d\n&quot;,p/n);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+return 0;<br>
+}</p>
+<p>第4关：字符串中各类字符数的统计<br>
+任务描述<br>
+本关任务：输入一行字符，分别统计出其中英文字母、数字、空格和其他字符的个数。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char c;<br>
+int letters=0,space=0,digit=0,other=0;<br>
+while((c=getchar())!='\n'){<br>
+if(c&gt;='a'&amp;&amp;c&lt;='z'||c&gt;='A'&amp;&amp;c&lt;='Z')<br>
+letters++;<br>
+else if(c==' ')<br>
+space++;<br>
+else if(c&gt;='0'&amp;&amp;c&lt;='9')<br>
+digit++;<br>
+else<br>
+other++;<br>
+}<br>
+printf(&quot;%d %d %d %d&quot;,letters,digit,space,other);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第5关：求sn=a+aa+aaa+aaaa+......的值<br>
+任务描述<br>
+本关任务：键盘输入正整数a和n，编程 s=a+aa+aaa+aaaa+aa...a（n个a）的值。<br>
+例如：<br>
+a=2 ，n=5时,表示计算由2组成的数的和：2+22+222+2222+22222  ( 此时 共有5个数相加)。</p>
+<p>输入：5    3   表示3个由5组成的数相加，即计算5+55+555的值，输出：615</p>
+<p>输入：5    4   表示计算5+55+555+5555的值，输出：6170<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int x,y;<br>
+int a,n;<br>
+int t;<br>
+int sum,Sum=0,add=0;<br>
+scanf(&quot;%d %d&quot;,&amp;a,&amp;n);<br>
+for(x=1,t=1;x&lt;=n;x++)<br>
+{<br>
+sum=a<em>t;<br>
+Sum=Sum+sum;<br>
+add=add+Sum;<br>
+t=t</em>10;<br>
+}<br>
+printf(&quot;%d&quot;,add);</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>循环结构程序设计2<br>
+第1关：C循环-求平均成绩<br>
+任务描述<br>
+本关任务：编写一个程序，输入学生人数和每个人的成绩，计算平均成绩。<br>
+######注意：当输入的学生人数小于等于0时，输出平均成绩为0分！<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a,i;<br>
+double b,c=0;<br>
+scanf(&quot;%d&quot;,&amp;a);<br>
+if(a&lt;=0){<br>
+printf(&quot;the number of students:the scores:average=0.00\n&quot;);<br>
+}<br>
+else{<br>
+for(i=1;i&lt;=a;i++){<br>
+scanf(&quot;%lf&quot;,&amp;b);<br>
+c = c + b;<br>
+}<br>
+printf(&quot;the number of students:the scores:average=%.2f\n&quot;,c/a);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第2关：C循环-求各位数字之积<br>
+任务描述<br>
+本关任务：计算正整数num的各位上的数字之积。<br>
+例如：</p>
+<p>输入：2583      经过----(2x5x8x3)      输出：240</p>
+<p>输入：102       经过----(1x0x2)       输出：0</p>
+<p>输入：136       经过----(1x3x6)       输出：18<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i,a,b,c=1;<br>
+scanf(&quot;%d&quot;,&amp;a);<br>
+if(a%10==0){<br>
+printf(&quot;0\n&quot;);<br>
+}	<br>
+else{<br>
+while(a%10!=0){<br>
+i = (int)a/10;<br>
+b = a%10;<br>
+a = i;<br>
+c = c * b;<br>
+}<br>
+printf(&quot;%d\n&quot;,c);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第3关：C循环-求阶乘之和<br>
+任务描述<br>
+本关任务：编写一个程序，任意输入n，求S=1!+2!+...+n!。<br>
+注意：n!表示n的阶乘。0的阶乘等于1，负数的阶乘等于0。<br>
+提示：(n+1)!=n!*(n+1)<br>
+例如：<br>
+输入：10<br>
+输出：4037913</p>
+<p>输入：7<br>
+输出：5913</p>
+<p>输入：-1<br>
+输出：0<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a,b=1,i,j,sum=0;<br>
+scanf(&quot;%d&quot;,&amp;a);<br>
+if(a&lt;0)<br>
+{<br>
+printf(&quot;0\n&quot;);<br>
+}<br>
+else if(a<mark>0)<br>
+{<br>
+printf(&quot;1\n&quot;);<br>
+}<br>
+else<br>
+{<br>
+for(i=0;i&lt;=a;i++)<br>
+{<br>
+for(j=1;j&lt;i;j++)<br>
+b</mark>1;<br>
+b=b*j;<br>
+sum+=b;<br>
+}<br>
+printf(&quot;%d\n&quot;,sum-1);<br>
+}</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第4关：C循环-水仙花数<br>
+任务描述<br>
+本关任务：求出所有的水仙花数。</p>
+<p>提示：所谓水仙花数是指一个三位数，其各位数字的立方和等于该数字本身。比如153是一个水仙花数，因为153=1<sup>3+5</sup>3+3^3。</p>
+<p>注意：本题不需要输入语句，由于网站限制要求一定要有输入输出示例，但同学们可以对输入部分忽略不计。<br>
+例如：<br>
+370就是一个水仙花数，因为370 = 3^3 +7^3 + 0^3<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i,a,b,c;<br>
+for (i=100;i&lt;1000;i++){<br>
+a = i/100;<br>
+b = i/10%10;<br>
+c = i%10;<br>
+if(a<em>a</em>a+b<em>b</em>b+c<em>c</em>c==i){<br>
+printf(&quot;%d &quot;,i);<br>
+}<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第5关：C循环-寻找完数<br>
+任务描述<br>
+本关任务：一个数如果恰好等于它的因子之和，这个数就称为&quot;完数&quot;。 例如，6的因子为1、2、3，而6=1+2+3，因此6是&quot;完数&quot;。 编程序找出1000之内的所有完数。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i,j,sum,max;<br>
+scanf(&quot;%d&quot;,&amp;max);<br>
+for(i=1;i&lt;max;i++){<br>
+sum=0;<br>
+for(j=1;j&lt;i;j++){<br>
+if(i%j<mark>0)<br>
+sum+=j;<br>
+}<br>
+if(sum</mark>i)<br>
+printf(&quot;%d\n&quot;,i);<br>
+}</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第6关：分数求和<br>
+任务描述<br>
+本关任务：编写程序计算   1 - 1/2 + 1/3 - 1/4 + ..... +1/99 - 1/100 的值,并显示出来(保留结果为小数点后三位)。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i;<br>
+double s=0;<br>
+for(i=1;i&lt;=99;i+=2){<br>
+s+=1.0/i;<br>
+}<br>
+for(i=2;i&lt;=100;i+=2){<br>
+s-=1.0/i;<br>
+}<br>
+printf(&quot;%.3f&quot;,s);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>选择结构程序设计<br>
+第1关：排序<br>
+任务描述<br>
+本关任务：下面的程序是从键盘输入三个整数按从小到大的顺序输出。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a,b,c,t;<br>
+printf(&quot;请输入三个整数:&quot;);<br>
+scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);<br>
+if(a&gt;b)<br>
+{<br>
+t=a;<br>
+a=b;<br>
+b=t;<br>
+}<br>
+if(a&gt;c)<br>
+{<br>
+t=a;<br>
+a=c;<br>
+c=t;<br>
+}<br>
+if(b&gt;c)<br>
+{<br>
+t=b;<br>
+b=c;<br>
+c=t;<br>
+}<br>
+printf(&quot;从小到大排列为:%d,%d,%d&quot;,a,b,c);</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第2关：选择结构-闰年判断<br>
+任务描述<br>
+编写程序，完成如下功能：从键盘输入任意年份year，判别该年份是否闰年。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int x;<br>
+scanf(&quot;%d&quot;,&amp;x);<br>
+if (x%400 == 0){<br>
+printf(&quot;%d 是闰年！&quot;,x);<br>
+}else{<br>
+printf(&quot;%d 不是闰年！&quot;,x);</p>
+<pre><code>  }
+  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第3关：选择结构-分段函数问题<br>
+任务描述<br>
+本关任务：编写程序，根据输入的值，输出函数的值。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+float x,y;<br>
+scanf(&quot;%f&quot;,&amp;x);<br>
+if(x&lt;0&amp;&amp;x!=-3){<br>
+y=x<em>x+x-6;<br>
+printf(&quot;%.3f&quot;,y);<br>
+}<br>
+else if(x&gt;=0&amp;&amp;x&lt;10&amp;&amp;x!=2&amp;&amp;x!=3){<br>
+y=x</em>x-5<em>x+6;<br>
+printf(&quot;%.3f&quot;,y);<br>
+}<br>
+else{<br>
+y=x</em>x-x-1;<br>
+printf(&quot;%.3f&quot;,y);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第4关：学生成绩等级换算<br>
+任务描述<br>
+本关任务：给出一百分制成绩，要求输出成绩等级A、B、C、D、E。 90分以上为A 80-89分为B 70-79分为C 60-69分为D 60分以下为E，如果输入数据不在0~100范围内，请输出一行：“Score is error!”。<br>
+相关知识<br>
+输入<br>
+从键盘输入一个成绩，成绩可以使浮点数。<br>
+输出<br>
+(1)如果输入数据在0到100范围内：一个字符，表示成绩等级。<br>
+(2)如果输入数据不在0~100范围内，请输出一行：“Score is error!”。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int score;<br>
+scanf(&quot;%d&quot;,&amp;score);<br>
+if(score &gt;= 90 &amp;&amp; score &lt;=100){<br>
+printf(&quot;A&quot;);<br>
+}<br>
+else if(score &gt;= 80&amp;&amp; score &lt;89){<br>
+printf(&quot;B&quot;);<br>
+}<br>
+else if(score &gt;= 70&amp;&amp; score &lt;79){<br>
+printf(&quot;C&quot;);<br>
+}<br>
+else if(score &gt;= 60&amp;&amp; score &lt;69){<br>
+printf(&quot;D&quot;);<br>
+}<br>
+else if(score &lt; 60&amp;&amp; score &gt;0){<br>
+printf(&quot;E&quot;);<br>
+}<br>
+else{<br>
+printf(&quot;Score is error!&quot;);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>顺序结构程序设计<br>
+第1关：加法运算<br>
+任务描述<br>
+本关任务：写一个加法程序，输入整数a,b，输出他们的和。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+int a,b,c;<br>
+//Please input a,b:<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+scanf(&quot;%d,%d&quot;,&amp;a,&amp;b);<br>
+c = a + b;<br>
+printf(&quot;%d+%d=%d\n&quot;,a,b,c);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第2关：不使用第3个变量，实现两个数的对调<br>
+本关任务：下列程序是不用第三个变量，实现将两个数进行对调的操作。<br>
+程序代码如下：<br>
+1    #include&lt;stdio.h&gt;<br>
+2    int main(void)<br>
+3    {<br>
+4    int a,b；printf(“Enter a and b:”);<br>
+5    scanf(“%d%d”,&amp;a,&amp;b)；<br>
+6    printf(“a=%d b=%d\n”,a,b)；<br>
+7    a=    ①    ；b=    ②    ；a=     ③     ；<br>
+8    printf(“a=%d  b=%d\n”,a,b)；<br>
+9    return 0;<br>
+10    }</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+int a,b;<br>
+//Enter a and b:<br>
+scanf(&quot;%d%d&quot;,&amp;a,&amp;b);<br>
+printf(&quot;a=%d b=%d\n&quot;,a,b);<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+a=a+b;<br>
+b=a-b;<br>
+a=a-b;</p>
+<pre><code>  /*********End**********/
+  printf(&quot;a=%d  b=%d\n&quot;,a,b);  
+   return 0;
+}
+</code></pre>
+<p>第3关：用宏定义常量<br>
+任务描述<br>
+本关任务：已知某物品单价为30，数量为x。求商品的总价钱。用宏定义物品的单价。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/</p>
+<pre><code> int x,c;
+ scanf(&quot;%d&quot;,&amp;x);
+ c=30*x;
+ printf(&quot;%d&quot;,c);
+
+  
+  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第4关：数字分离<br>
+任务描述<br>
+输入一个三位数，分别求出x的各位数字，十位数字，百位数字的值。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int x;<br>
+scanf(&quot;%d&quot;,&amp;x);<br>
+printf(&quot;%d %d %d\n&quot;,x/100,x/10%10,x%10);</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第5关：计算总成绩和平均成绩<br>
+任务描述<br>
+本关任务：编程求从键盘上输入一个学生的五门成绩，计算出该学生的总成绩和平均成绩。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a,b,c,d,e,sum;<br>
+float avg;<br>
+scanf(&quot;%d %d %d %d %d&quot;,&amp;a,&amp;b,&amp;c,&amp;d,&amp;e);<br>
+sum = a + b + c + d + e ;<br>
+avg = sum / 5.00 ;<br>
+printf(&quot;%d %.2f&quot;,sum,avg);</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第6关：求三角形的面积<br>
+任务描述<br>
+本关任务：编程求以a、b、c为边长的三角形的面积area。<br>
+相关知识<br>
+三角形面积计算公式为：<br>
+假设三角形三条边长分别为a、b、c，其中s=（a+b+c）/2<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a,b,c;<br>
+float d;<br>
+double e,S;<br>
+scanf(&quot;%d %d %d&quot;,&amp;a,&amp;b,&amp;c);<br>
+d = (a + b + c) * 0.5;<br>
+e = d*(d-a)<em>(d-b)</em>(d-c);<br>
+S = sqrt(e);<br>
+printf(&quot;%.3f\n&quot;,S);</p>
+<pre><code>  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第7关：立体几何计算题<br>
+任务描述<br>
+本关任务：设圆半径r，圆柱高h ， 求圆周长C1，半径为r的圆球表面积Sb,圆半径r，圆柱高为h的圆柱体积Vb。 用scanf输入数据，输出计算结果，输出时取小数点后两位数字。请编程序。 PI＝3.14<br>
+编程要求<br>
+输入：两个double型浮点数，r和h；</p>
+<p>输出：圆周长C1、圆球表面积Sb、圆柱体积Vb。 保留两位小数，每个结果后换行。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+#define PI 3.14<br>
+double r,h,C1,Sb,Vb;<br>
+scanf(&quot;%lf,%lf&quot;,&amp;r,&amp;h);</p>
+<pre><code>C1= 2*PI*r;
+Sb= 4*PI*r*r;
+Vb= PI*r*r*h;
+printf(&quot;C1=%.2f\nSb=%.2f\nVb=%.2f\n&quot;,C1,Sb,Vb);
+
+  
+  /*********End**********/ 
+   return 0;
+}
+</code></pre>
+<p>第8关：计算两个正整数的最大公约数<br>
+任务描述<br>
+编程计算两个正整数的最大公约数。其中求最大公约数的函数原型已经给出，请在主函数中编程调用函数，输出最大公约数。<br>
+#include&lt;stdio.h&gt;<br>
+int MaxCommonFactor( int a, int b)<br>
+{<br>
+int c;<br>
+if(a&lt;=0||b&lt;=0)<br>
+return -1;<br>
+while(b!=0)<br>
+{<br>
+c=a%b;<br>
+a=b;<br>
+b=c;<br>
+}<br>
+return a;<br>
+}<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a,b,result;<br>
+scanf(&quot;%d,%d&quot;,&amp;a,&amp;b);	<br>
+result = MaxCommonFactor(a,b);<br>
+printf(&quot;%d&quot;, result);</p>
+<pre><code>  /*********End**********/ 
+return 0;
+</code></pre>
+<p>}</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[头歌C语言第一章]]></title>
+        <id>https://kk95283.github.io/post/tou-ge-c-yu-yan-di-yi-zhang/</id>
+        <link href="https://kk95283.github.io/post/tou-ge-c-yu-yan-di-yi-zhang/">
+        </link>
+        <updated>2023-12-05T04:21:11.000Z</updated>
+        <content type="html"><![CDATA[<p>第1关：看看你的成绩怎么样<br>
+任务描述<br>
+假设某同学选修了5门课程，请依次从键盘输入他5门课的成绩（每两个成绩之间以逗号隔开），然后求出他们的平均成绩并输出。（保留两位小数）<br>
+#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+/<em><strong><strong><strong><strong><strong><strong><strong><strong>Begin</strong></strong></strong></strong></strong></strong></strong></strong></em>*/<br>
+float a,b,c,d,e;<br>
+scanf(&quot;%f,%f,%f,%f,%f&quot;, &amp;a, &amp;b, &amp;c, &amp;d, &amp;e);<br>
+float sum;<br>
+sum = a+b+c+d+e;<br>
+printf(&quot;%.2f&quot;,sum/5);<br>
+/***************** End ******************/<br>
+return 0;<br>
+}<br>
+第2关：输出字符的ASCII码<br>
+任务描述<br>
+从键盘输入一个字符，按规定格式输出这个字符及它的ASCII码。例如：<br>
+输入<br>
+A<br>
+输出<br>
+“The ASCII of 'A' is 65”.</p>
+<p>#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+/<em><strong><strong><strong><strong><strong><strong><strong><strong>Begin</strong></strong></strong></strong></strong></strong></strong></strong></em>*/<br>
+char a;<br>
+scanf(&quot; %c&quot;, &amp;a); // 注意加入空格，以避免读取前面的空白字符<br>
+int c = (int)a; // 将输入字符的ASCII码赋值给c<br>
+printf(&quot;&quot;The ASCII of '%c' is %d&quot;.&quot;, a, c); // 输出字符及其ASCII码<br>
+return 0;<br>
+/***************** End <em><strong><strong><strong><strong><strong><strong><strong><strong><em>/<br>
+return 0;<br>
+}<br>
+第3关：进制转换<br>
+任务描述<br>
+输入一个非负整数，输出它的八进制，十进制以及十六进制数<br>
+#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+/<em><strong><strong><strong><strong><strong><strong><strong><strong>Begin</strong></strong></strong></strong></strong></strong></strong></strong></em></em>/<br>
+int i;<br>
+scanf(&quot;%d&quot;,&amp;i);<br>
+printf(&quot;%o &quot;,i);<br>
+printf(&quot;%d &quot;,i);<br>
+printf(&quot;%x&quot;,i);<br>
+/</strong></strong></strong></strong></strong></strong></strong></strong></em> End ******************/<br>
+return 0;<br>
+}</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[emu8086加法计算]]></title>
+        <id>https://kk95283.github.io/post/emu8086-jia-fa-ji-suan/</id>
+        <link href="https://kk95283.github.io/post/emu8086-jia-fa-ji-suan/">
+        </link>
+        <updated>2023-12-04T06:09:26.000Z</updated>
+        <content type="html"><![CDATA[<p>;计算X+Y+Z=?(X、Y、Z为16位二制数)<br>
+;1、X=OABCDH，Y=OEFABH，Z=0CDEFH<br>
+;2、数据段输入地址:6000H，disp; 4000H<br>
+;3、数据段输出地址:6000H，disp; 4102H</p>
+<p>源码：<br>
+mov ax,6000h<br>
+mov ds,ax<br>
+mov [4000h],0abcdh      ;4000h偏移量     4000存abcdh<br>
+mov [4002h],0efabh      ;4002存efabh<br>
+mov [4004h],0cdefh<br>
+mov ax,[4000h]<br>
+add ax,[4002h]<br>
+adc [4102h],0                   ;考虑cf的进位数（溢出进位）  为溢出的内容存储到4102h<br>
+add ax,[4004h]<br>
+adc [4102h],0<br>
+mov [4103h],ah<br>
+mov [4104h],al</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[emu8086寻址指令实验]]></title>
+        <id>https://kk95283.github.io/post/emu8086-xun-zhi-zhi-ling-shi-yan/</id>
+        <link href="https://kk95283.github.io/post/emu8086-xun-zhi-zhi-ling-shi-yan/">
+        </link>
+        <updated>2023-12-04T06:07:28.000Z</updated>
+        <content type="html"><![CDATA[<p>创建COM TEMPLATE程序，分别输入下列指令，按要求设置各寄存器及内存单元的值<br>
+（提示：在“emulator”对话框中，可以直接修改寄存器的值以及设置内存单元的值），其中<br>
+BX＝0010H，SI＝0001H，[60010H]＝12H，[60011H]＝34H，[60012H]＝56H，[60013H]＝78H，[60120H]＝0ABH，[60121H]＝0CDH，[60122H]＝0EFH，并填写指令执行后AX中的内容。<br>
+1）MOV  AX，1200H             AX=         1200H<br>
+2）MOV  AX，BX                   AX=         0010H<br>
+3）MOV  AX，[0120H]           AX=         CDABH<br>
+4）MOV  AX，[BX]                 AX=         3412H<br>
+5）MOV  AX，0110H[BX]           AX=         CDABH<br>
+6）MOV  AX，[BX][SI]                AX=         5634H<br>
+7）MOV  AX，0110H[BX][SI]     AX=         EFCDH</p>
+<p>源码：<br>
+mov ax,6000h<br>
+mov ds,ax<br>
+mov bx,0010h<br>
+mov si,0001h<br>
+mov [0010h],12h<br>
+mov [0011h],34h<br>
+mov [0012h],56h<br>
+mov [0013h],78h<br>
+mov [0120h],0ABh<br>
+mov [0121h],0CDh<br>
+mov [0122h],0EFh</p>
+<p>mov ax,1200h<br>
+mov ax,bx<br>
+mov ax,[0120h]<br>
+mov ax,[bx]<br>
+mov ax,0110h[bx]<br>
+mov ax,[bx][si]<br>
+mov ax,0110h[bx][si]</p>
+<p>ret</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何在bridge中搭代理]]></title>
+        <id>https://kk95283.github.io/post/ru-he-zai-bridge-zhong-da-dai-li/</id>
+        <link href="https://kk95283.github.io/post/ru-he-zai-bridge-zhong-da-dai-li/">
+        </link>
+        <updated>2023-12-04T05:56:10.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p><img src="https://kk95283.github.io/post-images/1701669626549.png" alt="" loading="lazy"><br>
+<img src="https://kk95283.github.io/post-images/1701669641729.png" alt="" loading="lazy"><br>
+<img src="https://kk95283.github.io/post-images/1701669645206.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何创建dockerfile]]></title>
+        <id>https://kk95283.github.io/post/ru-he-chuang-jian-dockerfile/</id>
+        <link href="https://kk95283.github.io/post/ru-he-chuang-jian-dockerfile/">
+        </link>
+        <updated>2023-12-01T14:57:35.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>https://zhuanlan.zhihu.com/p/150800667#:~:text=%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Dockerfile%EF%BC%9F%201%20%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%20Dockerfile%EF%BC%9F%20Dockerfile%20%E6%98%AF%E4%B8%80%E4%B8%AA%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%EF%BC%8C%E5%85%B6%E5%86%85%E5%8C%85%E5%90%AB%E4%BA%86%E4%B8%80%E6%9D%A1%E6%9D%A1%E7%9A%84%E6%8C%87%E4%BB%A4%EF%BC%8C%E6%AF%8F%E4%B8%80%E6%9D%A1%E6%8C%87%E4%BB%A4%E6%9E%84%E5%BB%BA%E4%B8%80%E5%B1%82%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%AF%8F%E4%B8%80%E6%9D%A1%E6%8C%87%E4%BB%A4%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%8F%8F%E8%BF%B0%E8%AF%A5%E5%B1%82%E5%BA%94%E5%BD%93%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E3%80%82%20%E6%9C%89%E4%BA%86Dockerfile%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%BD%93%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%AE%9A%E5%88%B6%E8%87%AA%E5%B7%B1%E9%A2%9D%E5%A4%96%E7%9A%84%E9%9C%80%E6%B1%82%E6%97%B6%EF%BC%8C%E5%8F%AA%E9%9C%80%E5%9C%A8Dockerfile%E4%B8%8A%E6%B7%BB%E5%8A%A0%E6%88%96%E8%80%85%E4%BF%AE%E6%94%B9%E6%8C%87%E4%BB%A4%EF%BC%8C%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E9%95%9C%E5%83%8F%E5%8D%B3%E5%8F%AF%EF%BC%8C%E7%9C%81%E5%8E%BB%E4%BA%86%E6%95%B2%E5%91%BD%E4%BB%A4%E7%9A%84%E9%BA%BB%E7%83%A6%E3%80%82%202,%E6%96%87%E4%BB%B6%E5%8F%8A%E4%B8%8A%E4%B8%8B%E6%96%87%E6%9E%84%E5%BB%BA%E6%96%B0%20Docker%20%E9%95%9C%E5%83%8F%E3%80%82%20...%204%20%E5%9B%9B%E3%80%81%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Dockerfile%201%E3%80%81%E5%87%86%E5%A4%87%E4%B8%80%E4%B8%AAnginx%E7%9A%84%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E3%80%82%20</p>
+]]></content>
+    </entry>
+</feed>

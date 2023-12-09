@@ -1,0 +1,200 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>emu8086寻址指令实验 | 小k的笔记</title>
+<link rel="shortcut icon" href="https://kk95283.github.io/favicon.ico?v=1702107040508">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kk95283.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="emu8086寻址指令实验 | 小k的笔记 - Atom Feed" href="https://kk95283.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="创建COM TEMPLATE程序，分别输入下列指令，按要求设置各寄存器及内存单元的值
+（提示：在“emulator”对话框中，可以直接修改寄存器的值以及设置内存单元的值），其中
+BX＝0010H，SI＝0001H，[60010H]＝12H，..." />
+    <meta name="keywords" content="二进制" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kk95283.github.io">
+  <img class="avatar" src="https://kk95283.github.io/images/avatar.png?v=1702107040508" alt="">
+  </a>
+  <h1 class="site-title">
+    小k的笔记
+  </h1>
+  <p class="site-description">
+    必须让你飞起来
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              emu8086寻址指令实验
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-12-04
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://kk95283.github.io/tag/rwFDVGJMR/" class="post-tag">
+                  # 二进制
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>创建COM TEMPLATE程序，分别输入下列指令，按要求设置各寄存器及内存单元的值<br>
+（提示：在“emulator”对话框中，可以直接修改寄存器的值以及设置内存单元的值），其中<br>
+BX＝0010H，SI＝0001H，[60010H]＝12H，[60011H]＝34H，[60012H]＝56H，[60013H]＝78H，[60120H]＝0ABH，[60121H]＝0CDH，[60122H]＝0EFH，并填写指令执行后AX中的内容。<br>
+1）MOV  AX，1200H             AX=         1200H<br>
+2）MOV  AX，BX                   AX=         0010H<br>
+3）MOV  AX，[0120H]           AX=         CDABH<br>
+4）MOV  AX，[BX]                 AX=         3412H<br>
+5）MOV  AX，0110H[BX]           AX=         CDABH<br>
+6）MOV  AX，[BX][SI]                AX=         5634H<br>
+7）MOV  AX，0110H[BX][SI]     AX=         EFCDH</p>
+<p>源码：<br>
+mov ax,6000h<br>
+mov ds,ax<br>
+mov bx,0010h<br>
+mov si,0001h<br>
+mov [0010h],12h<br>
+mov [0011h],34h<br>
+mov [0012h],56h<br>
+mov [0013h],78h<br>
+mov [0120h],0ABh<br>
+mov [0121h],0CDh<br>
+mov [0122h],0EFh</p>
+<p>mov ax,1200h<br>
+mov ax,bx<br>
+mov ax,[0120h]<br>
+mov ax,[bx]<br>
+mov ax,0110h[bx]<br>
+mov ax,[bx][si]<br>
+mov ax,0110h[bx][si]</p>
+<p>ret</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kk95283.github.io/post/ru-he-zai-bridge-zhong-da-dai-li/">
+              <h3 class="post-title">
+                如何在bridge中搭代理
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://kk95283.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

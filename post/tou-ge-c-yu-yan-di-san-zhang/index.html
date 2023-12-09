@@ -1,0 +1,451 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>头歌C语言第三章 | 小k的笔记</title>
+<link rel="shortcut icon" href="https://kk95283.github.io/favicon.ico?v=1702107040508">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kk95283.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="头歌C语言第三章 | 小k的笔记 - Atom Feed" href="https://kk95283.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="函数
+第1关：求和
+任务描述
+题目描述:给你一个n，要求你编写一个函数求1+2+.......+n.
+#include&lt;stdio.h&gt;
+//编写函数
+/Begin/
+int sum(int x)
+{
+int i=1,sum=0..." />
+    <meta name="keywords" content="C语言" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kk95283.github.io">
+  <img class="avatar" src="https://kk95283.github.io/images/avatar.png?v=1702107040508" alt="">
+  </a>
+  <h1 class="site-title">
+    小k的笔记
+  </h1>
+  <p class="site-description">
+    必须让你飞起来
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              头歌C语言第三章
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-12-05
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="https://kk95283.github.io/tag/F8M30g5ow/" class="post-tag">
+                  # C语言
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>函数<br>
+第1关：求和<br>
+任务描述<br>
+题目描述:给你一个n，要求你编写一个函数求1+2+.......+n.<br>
+#include&lt;stdio.h&gt;<br>
+//编写函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int sum(int x)<br>
+{<br>
+int i=1,sum=0;<br>
+for(i=1;i&lt;=x;i++)<br>
+{<br>
+sum+=i;<br>
+}<br>
+return sum;<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n,c;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+printf(&quot;%d&quot;,sum(n));<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第2关：回文数计算<br>
+任务描述<br>
+本关任务：编写函数求区间[200,3000]中所有的回文数，回文数是正读和反读都是一样的数。如525, 1551<br>
+#include&lt;stdio.h&gt;<br>
+void solve(){<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i=0,a,b,c,d;<br>
+for(i=200; i&lt;=3000; i++) {<br>
+a=i/1000;	<br>
+b=(i-a<em>1000)/100;	<br>
+c=((i-a</em>1000)-b<em>100)/10;	<br>
+d=i%10;	<br>
+if(i&lt;1000 &amp;&amp; b<mark>d)<br>
+printf(&quot;%d\n&quot;,i);<br>
+if( i&gt;=1000 &amp;&amp; a</mark>d &amp;&amp; b==c)<br>
+printf(&quot;%d\n&quot;,i);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+}<br>
+int main(void)<br>
+{<br>
+solve();<br>
+return 0;<br>
+}</p>
+<p>第3关： 编写函数求表达式的值<br>
+题目描述:有如下表达式 s = 1 + 1 / 3 + (1 * 2) / (3 * 5) + (1 * 2 * 3) / (3 * 5 * 7) + .... + (1 * 2 * 3 * .... * n) / (3 * 5 * 7 * ... * (2 * n + 1))。<br>
+#include&lt;stdio.h&gt;<br>
+//编写题目要求的函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int function(int n) {<br>
+double a=1,b=1,i;<br>
+double s=0;<br>
+for(i=0; i&lt;=n; i++) {<br>
+if(i<mark>0 || i</mark>1) a=1;<br>
+else a=a<em>i;<br>
+b=b</em>(2<em>i+1);<br>
+s+=(double)a/b;<br>
+}<br>
+printf(&quot;%.10lf\n&quot;,s);<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+function(n);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第4关：阶乘数列<br>
+任务描述<br>
+题目描述:求Sn=1!+2!+3!+4!+5!+…+n!之值，其中n是一个数字。<br>
+#include&lt;stdio.h&gt;<br>
+//编写函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long long solve(long long n){<br>
+if(n&lt;=1)<br>
+return 1;<br>
+return(n<em>solve(n-1));<br>
+}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long long n;<br>
+scanf(&quot;%lld&quot;,&amp;n);<br>
+long long ans=0;<br>
+for(long long i=1;i&lt;=n;i++)<br>
+ans+=solve(i);<br>
+printf(&quot;%lld&quot;, ans);<br>
+return 0;<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第5关：亲密数<br>
+任务描述<br>
+题目描述:两个不同的自然数A和B，如果整数A的全部因子(包括1，不包括A本身)之和等于B；且整数B的全部因子(包括1，不包括B本身)之和等于A，则将整数A和B称为亲密数。求3000以内的全部亲密数。<br>
+#include&lt;stdio.h&gt;<br>
+void solve(){<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long i,a,b1,b2;<br>
+for(a=1;a&lt;=3000;a++)<br>
+{<br>
+b1=0;<br>
+for(i=1;i&lt;a;i++)<br>
+{<br>
+if(a%i<mark>0)<br>
+b1+=i;<br>
+}<br>
+b2=0;<br>
+for(i=1;i&lt;b1;i++)<br>
+{<br>
+if(b1%i</mark>0)<br>
+b2+=i;<br>
+}<br>
+if(b2==a &amp;&amp;a&lt;b1)<br>
+printf(&quot;(%d,%d)&quot;,a,b1);<br>
+}<br>
+return ;<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+}<br>
+int main(void)<br>
+{<br>
+solve();<br>
+return 0;<br>
+}</p>
+<p>第6关：公约公倍数<br>
+任务描述<br>
+题目描述:写两个函数，分别求两个整数的最大公约数和最小公倍数，用主函数调用这两个函数，并输出结果。两个整数由键盘输入。</p>
+<p>#include&lt;stdio.h&gt;<br>
+//编写最大公约数GCD函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int GCD(long long int a,long long int b)<br>
+{<br>
+long long int c,d;<br>
+if(a&gt;0&amp;&amp;b&gt;0)<br>
+{<br>
+if(a&lt;b)<br>
+{<br>
+c=b;<br>
+b=a;<br>
+a=c;<br>
+}<br>
+while(b!=0)<br>
+{</p>
+<pre><code>		d=a%b;
+		a=b;
+		b=d;
+	}
+	return a;
+}
+</code></pre>
+<p>}<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/</p>
+<p>//编写最小公倍数LCM函数<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/</p>
+<p>/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+long long int a,b,gy,gb;<br>
+scanf(&quot;%lld%lld&quot;,&amp;a,&amp;b);<br>
+if(a&lt;0||b&lt;0)<br>
+{<br>
+printf(&quot;Input Error&quot;);<br>
+return 0;<br>
+}<br>
+gy=GCD(a,b);<br>
+gb=(a<em>b)/gy;<br>
+printf(&quot;%lld %lld&quot;,gy,gb);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em></em>/<br>
+return 0;<br>
+}</p>
+<p>递归函数、嵌套函数<br>
+第1关：递归求阶乘数列<br>
+任务描述<br>
+题目描述：用递归求Sn=1!+2!+3!+4!+5!+…+n!之值，其中n是一个数字。<br>
+#include&lt;stdio.h&gt;<br>
+long long solve(long long n){<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+if(n&lt;1)<br>
+return 1;<br>
+return (n*solve(n-1));</p>
+<pre><code>/*********End**********/
+</code></pre>
+<p>}<br>
+int main(void)<br>
+{<br>
+long long n;<br>
+scanf(&quot;%lld&quot;,&amp;n);<br>
+long long ans=0;<br>
+for(long long i=1;i&lt;=n;i++)<br>
+ans+=solve(i);<br>
+printf(&quot;%lld&quot;, ans);<br>
+return 0;<br>
+}</p>
+<p>第2关：递归实现输出一个整数的逆序<br>
+任务描述<br>
+题目描述：编写一个递归函数，将一个整数n逆序输出，比如，n = 12345，输出54321。<br>
+#include&lt;stdio.h&gt;<br>
+void solve(int n){<br>
+printf(&quot;%d&quot;, n%10);<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+n=n/10;<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+if(n&gt;0) solve(n);<br>
+}<br>
+int main(void)<br>
+{<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+solve(n);<br>
+return 0;<br>
+}</p>
+<p>第3关：将整数递归转换成字符串<br>
+任务描述<br>
+题目描述：用递归法将一个整数n转换成字符串。例如，输入n为483，输出字符串 4 8 3，每个数字后面接一个空格用于隔开字符。<br>
+#include&lt;stdio.h&gt;<br>
+void solve(int n){<br>
+int temp=n%10;<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+if((n/=10)!=0)<br>
+solve(n);</p>
+<pre><code>/*********End**********/
+if(n)
+    printf(&quot; %d&quot;, temp);
+else
+    printf(&quot;%d&quot;, temp);
+</code></pre>
+<p>}<br>
+int main(void)<br>
+{<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+solve(n);<br>
+return 0;<br>
+}</p>
+<p>第4关：递归实现Ackman函数<br>
+题目描述：编写一函数实现下列Ackman函数，其中m，n为正整数</p>
+<pre><code>                    n+1                             if m=0,n&gt;0
+</code></pre>
+<p>Acm(m,n)=     Acm(m−1,1)                if n=0,m&gt;0<br>
+Acm(m−1,Acm(m,n−1))                  if n&gt;0,m&gt;0</p>
+<p>#include&lt;stdio.h&gt;<br>
+int Acm(int m,int n){<br>
+if(m<mark>0&amp;&amp;n&gt;0)<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+return(n+1);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+else if(n</mark>0&amp;&amp;m&gt;0)<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+return(Acm(m-1,1));<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+else<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+return(Acm(m-1,Acm(m,n-1)));<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+}<br>
+int main(void)<br>
+{<br>
+int m,n;<br>
+scanf(&quot;%d%d&quot;,&amp;m,&amp;n);<br>
+printf(&quot;%d&quot;, Acm(m,n));<br>
+return 0;<br>
+}</p>
+<p>​</p>
+<p>​</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kk95283.github.io/post/tou-ge-c-yu-yan-di-er-zhang/">
+              <h3 class="post-title">
+                头歌C语言第二章
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://kk95283.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

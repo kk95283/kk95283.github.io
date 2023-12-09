@@ -1,0 +1,650 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>头歌C语言第四章 | 小k的笔记</title>
+<link rel="shortcut icon" href="https://kk95283.github.io/favicon.ico?v=1702107040508">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://kk95283.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="头歌C语言第四章 | 小k的笔记 - Atom Feed" href="https://kk95283.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="字符数组
+第1关：字符逆序
+任务描述
+题目描述:输入一个字符串，输出反序后的字符串。
+#include&lt;stdio.h&gt;
+int main(void)
+{
+/Begin/
+char a[200];
+int i=0,j=0,t=0..." />
+    <meta name="keywords" content="C语言" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kk95283.github.io">
+  <img class="avatar" src="https://kk95283.github.io/images/avatar.png?v=1702107040508" alt="">
+  </a>
+  <h1 class="site-title">
+    小k的笔记
+  </h1>
+  <p class="site-description">
+    必须让你飞起来
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              头歌C语言第四章
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-12-05
+              </span>
+              <span>
+                12 min read
+              </span>
+              
+                <a href="https://kk95283.github.io/tag/F8M30g5ow/" class="post-tag">
+                  # C语言
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>字符数组<br>
+第1关：字符逆序<br>
+任务描述<br>
+题目描述:输入一个字符串，输出反序后的字符串。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char a[200];<br>
+int i=0,j=0,t=0,k;<br>
+scanf(&quot;%s&quot;,a);<br>
+while(a[i]!='\0'){<br>
+i++;<br>
+j++;<br>
+}<br>
+for(i=0,k=j-1;i&lt;k;i++,k--){<br>
+t=a[i];<br>
+a[i]=a[k];<br>
+a[k]=t;<br>
+}<br>
+for(i=0;i&lt;=j;i++)<br>
+printf(&quot;%c&quot;,a[i]);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第2关：字符统计<br>
+任务描述<br>
+题目描述:对于给定的一个字符串，统计其中数字字符出现的次数。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n,i,j,count;<br>
+char s[10][50];   	<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+scanf(&quot;%s&quot;,&amp;s[i]);<br>
+}<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+count=0;<br>
+for(j=0;s[i][j]!='\0';j++)<br>
+if(s[i][j]&gt;='0'&amp;&amp;s[i][j]&lt;='9')<br>
+count++;<br>
+printf(&quot;%d\n&quot;,count);<br>
+}</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第3关：字符插入<br>
+任务描述<br>
+题目描述:输入两个字符串a和b，将b串中的最大字符插入到a串中最小字符后面。<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char a[50],b[50];<br>
+int i,j,m,n;<br>
+int max,min;<br>
+gets(a);<br>
+gets(b);<br>
+m=strlen(a);<br>
+n=strlen(b);<br>
+for(i=0,min=0;i&lt;m;i++)<br>
+if(a[min]&gt;a[i])<br>
+min=i;<br>
+for(i=0,max=0;i&lt;n;i++)<br>
+if(b[max]&lt;b[i])<br>
+max=i;<br>
+for(j=m+1;j&gt;min;j--)<br>
+a[j]=a[j-1];<br>
+a[j+1]=b[max];<br>
+puts(a);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第4关：字符串处理<br>
+任务描述<br>
+题目描述：编写程序，输入字符串s1和s2以及插入位置f，在字符串s1中的指定位置f处插入字符串s2。如输入&quot;BEIJING&quot;， &quot;123&quot;， 3，则输出:&quot;BEI123JING&quot;。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char s1[150],s2[150],s3[150];<br>
+int f,m,n,i,j=0,k=0;<br>
+gets(s1);<br>
+gets(s2);<br>
+scanf(&quot;%d&quot;,&amp;f);<br>
+m=strlen(s1);<br>
+n=strlen(s2);<br>
+for(i=f;i&lt;m;i++)<br>
+{<br>
+s3[k++]=s1[i];<br>
+}<br>
+for(i=f;i&lt;n+f+1;i++)<br>
+{<br>
+s1[i]=s2[j++];<br>
+}<br>
+strcat(s1,s3);<br>
+s1[m+n]='\0';<br>
+printf(&quot;%s&quot;,s1);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第5关：字符串统计<br>
+题目描述:输入一段字符(由空格、字母和数字几种组成，保证开头不为空格)，里面有若干个字符串，求这些字符串的长度和，并输出最长字符串内容,如果有多个输出最先出现的那个字符串。以stop作为最后输入的字符串。<br>
+#include&lt;stdio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int i,j=0,m,count,max;<br>
+char a[100];<br>
+while(1)<br>
+{<br>
+gets(a);<br>
+count=0;<br>
+max=0;<br>
+if(strcmp(a,&quot;stop&quot;)<mark>0)<br>
+break;<br>
+for(i=strlen(a)-1;i&gt;=0;i--)<br>
+{<br>
+if(a[i]!=' '&amp;&amp;i!=0)<br>
+{<br>
+j++;<br>
+count++;<br>
+}<br>
+else if(a[i]</mark>' '||i<mark>0)<br>
+{<br>
+if(i</mark>0)<br>
+{<br>
+j++;<br>
+count++;<br>
+}<br>
+if(j&gt;=max)<br>
+{<br>
+max=j;<br>
+m=i;<br>
+if(i==0)<br>
+m=i-1;<br>
+}<br>
+j=0;<br>
+}<br>
+}<br>
+printf(&quot;%d &quot;,count);<br>
+for(i=m+1;i&lt;m+1+max;i++)<br>
+printf(&quot;%c&quot;,a[i]);<br>
+printf(&quot;\n&quot;);<br>
+}</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第6关：字符串排序<br>
+任务描述<br>
+题目描述：输入3行，每行n个字符串，按由小到大的顺序输出<br>
+#include&lt;stdio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+char ch1[1000],ch2[1000],ch3[1000],ch4[1000];<br>
+gets(ch1);gets(ch2);gets(ch3);<br>
+//strcmp(s1,s2) s1&gt;s2则返回正数 反之则返回负数<br>
+if(strcmp(ch1,ch2)&gt;0)<br>
+{<br>
+strcpy(ch4,ch2);<br>
+strcpy(ch2,ch1);<br>
+strcpy(ch1,ch4);<br>
+}<br>
+if(strcmp(ch1,ch3)&gt;0)<br>
+{<br>
+strcpy(ch4,ch3);<br>
+strcpy(ch3,ch1);<br>
+strcpy(ch1,ch4);<br>
+}<br>
+if(strcmp(ch2,ch3)&gt;0)<br>
+{<br>
+strcpy(ch4,ch3);<br>
+strcpy(ch3,ch2);<br>
+strcpy(ch2,ch4);<br>
+}<br>
+puts(ch1);<br>
+puts(ch2);<br>
+puts(ch3);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>一维数组和二维数组<br>
+第1关：排序问题(冒泡排序法)<br>
+任务描述<br>
+本关任务:将十个数进行从大到小的顺序进行排列。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a[10];<br>
+int i,j,t;<br>
+for(i=0; i&lt;10; i++)<br>
+scanf(&quot;%d&quot;,&amp;a[i]);<br>
+for(j=0; j&lt;9; j++)<br>
+for(i=0; i&lt;9-j; i++)<br>
+if(a[i]&lt;a[i+1])<br>
+{<br>
+t=a[i];<br>
+a[i]=a[i+1];<br>
+a[i+1]=t;<br>
+}<br>
+for(i=0; i&lt;10; i++)<br>
+printf(&quot;%d &quot;,a[i]);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第2关：查找整数</p>
+<p>任务描述<br>
+题目描述：给出一个包含n个整数的数列，问整数a在数列中的第一次出现是第几个。<br>
+输入<br>
+第一行包含一个整数n。<br>
+第二行包含n个非负整数，为给定的数列，数列中的每个数都不大于10000。<br>
+第三行包含一个整数a，为待查找的数。<br>
+输出<br>
+如果a在数列中出现了，输出它第一次出现的位置(位置从1开始编号)，否则输出-1。<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n;<br>
+scanf(&quot;%d&quot;,&amp;n);<br>
+int a[n];<br>
+int num;<br>
+int i;<br>
+int flag=0;<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+scanf(&quot;%d&quot;,&amp;a[i]);<br>
+}<br>
+scanf(&quot;%d&quot;,&amp;num);<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+if(a[i]<mark>num)<br>
+{<br>
+flag=1;<br>
+printf(&quot;%d&quot;,i+1);<br>
+break;<br>
+}<br>
+}<br>
+if(flag</mark>0)<br>
+printf(&quot;-1&quot;);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第3关：计算数组中元素的最大值及其所在的行列下标值<br>
+任务描述<br>
+题目描述:按如下函数原型编程从键盘输入一个m行n列的二维数组，然后计算数组中元素的最大值及其所在的行列下标值。其中m和n的值由用户键盘输入。已知m和n的值都不超过10。<br>
+输入<br>
+输入数组大小：&quot;%d,%d&quot;<br>
+下面输入数组中元素。</p>
+<p>输出<br>
+输出格式：<br>
+数组大小输入提示信息：&quot;Input m, n:&quot;<br>
+数组元素输入提示信息：&quot;Input %d*%d array: &quot;<br>
+输出格式：&quot;max=%d, row=%d, col=%d&quot;</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int m,n;<br>
+printf(&quot;Input m, n:&quot;);<br>
+scanf(&quot;%d,%d&quot;,&amp;m,&amp;n);<br>
+int a[m][n];<br>
+printf(&quot;Input %d*%d array:\n&quot;,m,n);<br>
+int i,j;<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+for(j=0;j&lt;m;j++)<br>
+scanf(&quot;%d&quot;,&amp;a[i][j]);<br>
+}<br>
+int max,row,col;<br>
+max=a[0][0];<br>
+row=1;<br>
+col=1;<br>
+for (i=0;i&lt;m;i++)<br>
+for (j=0;j&lt;n;j++)<br>
+if (max&lt; a[i][j])<br>
+{<br>
+max=a[i][j];<br>
+row=i+1;<br>
+col=j+1;<br>
+}<br>
+printf(&quot;max=%d, row=%d, col=%d&quot;,max,row,col);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>任务描述<br>
+题目描述:将n个从小到大排序的整数（n&lt;1000000）从1~n进行编号，并一个待查找的整数m，请使用二分法进行查找。<br>
+输入<br>
+输入包括3行，第一行为整数n，第二行包括n个整数，以空格分隔，第三行为整数m。<br>
+输出<br>
+如果能够在序列中找到整数m，则输出编号（如果存在多个编号，返回编号最小的），如果不存在，则输出None。</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int n,m,s,b,mid,i;<br>
+scanf(&quot;%d&quot;,&amp;n);		<br>
+int a[n];<br>
+for(i=0;i&lt;n;i++)<br>
+{<br>
+scanf(&quot;%d&quot;,&amp;a[i]);		<br>
+}<br>
+scanf(&quot;%d&quot;,&amp;m);<br>
+s=0;<br>
+b=n-1;			<br>
+while(s&lt;=b)		<br>
+{<br>
+mid=(b+s)/2;		<br>
+if(m&gt;a[mid])		<br>
+{<br>
+s=mid+1;<br>
+}<br>
+else if(m&lt;a[mid])<br>
+{<br>
+b=mid-1;<br>
+}<br>
+else if(m==a[mid])<br>
+{<br>
+printf(&quot;%d&quot;,mid+1);return 0;<br>
+}</p>
+<pre><code>} 
+printf(&quot;None&quot;);
+
+/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第5关：鞍点<br>
+任务描述<br>
+题目描述:找出具有m行n列二维数组Array的“鞍点”，即该位置上的元素在该行上最大，在该列上最小，其中1&lt;=m,n&lt;=10。<br>
+输入<br>
+输入数据有多行，第一行有两个数m和n，下面有m行，每行有n个数。</p>
+<p>输出<br>
+按下列格式输出鞍点：<br>
+Array[i][j]=x<br>
+其中x代表鞍点，i和j为鞍点所在的数组行和列下标，我们规定数组下标从0开始。<br>
+一个二维数组并不一定存在鞍点，此时请输出None<br>
+我们保证不会出现两个鞍点的情况，比如：<br>
+3 3<br>
+1 2 3<br>
+1 2 3<br>
+3 6 8</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int m, n, i, j, k, b, c, flag, q;<br>
+q = 1;<br>
+scanf(&quot;%d %d&quot;, &amp;m, &amp;n);<br>
+int a[m][n];<br>
+for(i = 0; i &lt; m; i++)<br>
+{<br>
+for(j = 0; j &lt; n; j++)<br>
+{<br>
+scanf(&quot;%d&quot;, &amp;a[i][j]);<br>
+}<br>
+}<br>
+for(i = 0; i &lt; m; i++)<br>
+{<br>
+flag = 1;<br>
+b = i, c = 0;<br>
+for(j = 0; j &lt; n; j++)<br>
+{<br>
+if(a[b][c] &lt; a[i][j])<br>
+{<br>
+c = j;<br>
+}<br>
+}///寻找每行的最大值<br>
+for(k = 0; k &lt; m; k++)<br>
+{<br>
+if(a[b][c] &gt; a[k][c])<br>
+{<br>
+flag = 0;<br>
+break;<br>
+}<br>
+}///排除法判断是否是每列的最小值<br>
+if(flag)<br>
+{<br>
+printf(&quot;Array[%d][%d]=%d\n&quot;, b, c, a[b][c]);<br>
+q = 0;<br>
+}<br>
+}<br>
+if(q)<br>
+printf(&quot;None\n&quot;);</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+<p>第6关：删除最大值<br>
+任务描述<br>
+题目描述:输入10个互不相同的整数并保存在数组中，找到该最大元素并删除它，输出删除后的数组<br>
+输入<br>
+输入10个互不相同整数<br>
+输出<br>
+输出删除最大元素后的数组<br>
+#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a[10];<br>
+int i,j,max;<br>
+max=0;<br>
+for(i=0;i&lt;10;i++)<br>
+{<br>
+scanf(&quot;%d&quot;,&amp;a[i]);<br>
+}<br>
+for(i=0;i&lt;10;i++)<br>
+{<br>
+if(max&lt;a[i])<br>
+{<br>
+max=a[i];<br>
+j=i;<br>
+}<br>
+}<br>
+for (i=j;j&lt;9;j++)<br>
+{<br>
+a[j]=a[j+1];<br>
+}<br>
+for (i=0;i&lt;9;i++)<br>
+printf (&quot;%d &quot;,a[i]);<br>
+/<em><strong><strong><strong><strong>End</strong></strong></strong></strong></em>*/<br>
+return 0;<br>
+}</p>
+<p>第7关：杨辉三角<br>
+题目描述：还记得中学时候学过的杨辉三角吗？具体的定义这里不再描述，你可以参考以下的图形：<br>
+1<br>
+1 1<br>
+1 2 1<br>
+1 3 3 1<br>
+1 4 6 4 1<br>
+1 5 10 10 5 1</p>
+<p>#include&lt;stdio.h&gt;<br>
+int main(void)<br>
+{<br>
+/<em><strong><strong><strong><strong>Begin</strong></strong></strong></strong></em>/<br>
+int a[10][10];<br>
+int i,j;<br>
+for(i=0;i&lt;10;i++){<br>
+a[i][i]=1;<br>
+a[i][0]=1;<br>
+}<br>
+for(i=2;i&lt;10;i++)<br>
+for(j=1;j&lt;=i-1;j++)<br>
+a[i][j]=a[i-1][j]+a[i-1][j-1];<br>
+for(i=0;i&lt;10;i++)<br>
+{<br>
+for(j=0;j&lt;=i;j++)<br>
+{<br>
+printf(&quot;%d&quot;,a[i][j]);<br>
+if(j!=i)<br>
+printf(&quot; &quot;);<br>
+}<br>
+printf(&quot;\n&quot;);<br>
+}</p>
+<pre><code>/*********End**********/
+return 0;
+</code></pre>
+<p>}</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kk95283.github.io/post/tou-ge-c-yu-yan-di-san-zhang/">
+              <h3 class="post-title">
+                头歌C语言第三章
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://kk95283.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
